@@ -1,5 +1,7 @@
 package com.Lambton;
 
+import sun.applet.resources.MsgAppletViewer;
+
 import java.util.*;
 
 public class CollectionFrameworkExample
@@ -7,29 +9,26 @@ public class CollectionFrameworkExample
     public static void main(String[] args) {
         ArrayList<String> mStringArrayList = new ArrayList<>();
 
-                mStringArrayList.add("A");
-                mStringArrayList.add("B");
-                mStringArrayList.add("C");
-                mStringArrayList.add("C");
+        mStringArrayList.add("A");
+        mStringArrayList.add("B");
+        mStringArrayList.add("C");
+        mStringArrayList.add("C");
 
-                mStringArrayList.add("A");
-                mStringArrayList.add("A");
+        mStringArrayList.add("A");
+        mStringArrayList.add("A");
 
         System.out.println(mStringArrayList);
-        for(int i=0;i<mStringArrayList.size();i++)
-        {
+        for (int i = 0; i < mStringArrayList.size(); i++) {
             System.out.println(mStringArrayList.get(i));
         }
 
-        for(String s : mStringArrayList)
-        {
+        for (String s : mStringArrayList) {
             System.out.println(s);
         }
 
         Iterator<String> iterator = mStringArrayList.iterator();
-        while(iterator.hasNext())
-        {
-            String s= iterator.next();
+        while (iterator.hasNext()) {
+            String s = iterator.next();
             System.out.println(s);
 
         }
@@ -43,11 +42,11 @@ public class CollectionFrameworkExample
         mySet.add("India");
         System.out.println(mySet);
 
-        Map<String, String>stringMap = new HashMap<>();
-        stringMap.put("IND","India");
-        stringMap.put("CAD","Canada");
+        Map<String, String> stringMap = new HashMap<>();
+        stringMap.put("IND", "India");
+        stringMap.put("CAD", "Canada");
         stringMap.put("USA", "United States");
-        stringMap.put("PAK","Pakistan");
+        stringMap.put("PAK", "Pakistan");
         System.out.println(stringMap);
         stringMap.put("CAD", "New Canada");
 
@@ -70,15 +69,65 @@ public class CollectionFrameworkExample
         USA.add("Texas");
         USA.add("New Jersy");
 
-        Map<String, ArrayList<String>>country = new HashMap<>();
-        country.put("CAD",Canada);
-        country.put("IND",India);
-        country.put("US",USA);
+        Map<String, ArrayList<String>> country = new HashMap<>();
+        country.put("CAD", Canada);
+        country.put("IND", India);
+        country.put("US", USA);
         System.out.println(country);
 
+
+        ArrayList<String> word = new ArrayList<>();
+        word.add("abc");
+        word.add("cab");
+        word.add("cat");
+        word.add("mate");
+        word.add("atem");
+        word.add("bac");
+        word.add("tac");
+        word.add("atc");
+        word.add("pop");
+        word.add("pat");
+        word.add("123");
+        word.add("231");
+        word.add("431");
+
+        System.out.println(word);
+        Map<String,ArrayList<String>> hm= new HashMap<>();
+        for (String s : word)
+        {
+            char[] c = s.toCharArray();
+            Arrays.sort(c);
+            String key = new String(c);
+
+            ArrayList<String> al = hm.get(key);
+            if (al == null) ;
+            {
+                al = new ArrayList<>();
+
+            }
+
+            al.add(s);
+            hm.put(key, al);
+        }
+        System.out.println(hm);
+
+        int n = 3;
+         int  ans = 0;
+        ans=(2^3)*3+1;
+
+        ans= (1 << n )* n+1;
+        System.out.println(ans);
+
+
+
+
+        }
 
 
 
 
     }
-}
+
+
+
+
